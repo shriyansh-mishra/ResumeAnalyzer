@@ -1,4 +1,4 @@
-# AI Resume Analyzer
+<!-- # AI Resume Analyzer
 
 An intelligent web application that analyzes resumes and provides personalized career insights.
 
@@ -72,4 +72,4 @@ ai-resume-analyzer/
 │   │   └── utils/
 │   └── package.json
 └── README.md
-``` 
+```  -->
