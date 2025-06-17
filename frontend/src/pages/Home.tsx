@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { Toaster } from 'react-hot-toast'
+import { Link } from 'react-router-dom'
 import { ResumeUpload } from '../components/ResumeUpload'
 import { AnalysisResults } from '../components/AnalysisResults'
 import { AnalysisResponse } from '../services/api'
@@ -204,10 +205,10 @@ const Home = () => {
             <div data-aos="fade-up" data-aos-delay="100">
               <h3 className="text-xl font-display font-semibold mb-6">Quick Links</h3>
               <ul className="space-y-4">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-lg">Features</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-lg">About</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-lg">Contact</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-lg">Privacy Policy</a></li>
+                <li><Link to="/features" className="text-gray-400 hover:text-white transition-colors text-lg">Features</Link></li>
+                <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors text-lg">About</Link></li>
+                <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors text-lg">Contact</Link></li>
+                <li><Link to="/privacy" className="text-gray-400 hover:text-white transition-colors text-lg">Privacy Policy</Link></li>
               </ul>
             </div>
 
