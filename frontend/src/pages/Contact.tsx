@@ -11,11 +11,11 @@ const Contact = () => {
         <div className="space-y-4">
           <div>
             <h2 className="text-xl font-semibold text-gray-800 mb-2">Email</h2>
-            <p className="text-gray-600">support@airesumeanalyzer.com</p>
+            <p className="text-gray-600">mishrashriyansh@outlook.com</p>
           </div>
           <div>
-            <h2 className="text-xl font-semibold text-gray-800 mb-2">Office Hours</h2>
-            <p className="text-gray-600">Monday - Friday: 9:00 AM - 5:00 PM EST</p>
+            <h2 className="text-xl font-semibold text-gray-800 mb-2">Connect With Me</h2>
+            <p className="text-gray-600"><a href="https://www.linkedin.com/in/shriyansh-mishra-281919225/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
           </div>
         </div>
       </div>

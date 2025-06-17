@@ -1,35 +1,44 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
-const Navbar = () => (
-  <nav className="bg-white/80 backdrop-blur-md shadow-sm w-full fixed top-0 left-0 z-50">
-    <div className="max-w-7xl mx-auto px-6 py-4">
-      <div className="flex items-center justify-between">
-        <Link to="/" className="text-2xl font-display font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-          AI Resume Analyzer
-        </Link>
-        <div className="flex items-center space-x-8">
-          <Link to="/features" className="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-300">
-            Features
+const Navbar = () => {
+  const scrollToUpload = () => {
+    const uploadSection = document.getElementById('upload-section')
+    if (uploadSection) {
+      uploadSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
+  return (
+    <nav className="bg-[#FAF6E9]/80 backdrop-blur-md shadow-sm w-full fixed top-0 left-0 z-50">
+      <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          <Link to="/" className="text-2xl font-display font-bold text-[#03A6A1]">
+            AI Resume Analyzer
           </Link>
-          <Link to="/about" className="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-300">
-            About
-          </Link>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Link 
-              to="/" 
-              className="px-6 py-2.5 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300"
-            >
-              Try Now
+          <div className="flex items-center space-x-8">
+            <Link to="/features" className="text-gray-700 hover:text-[#03A6A1] font-medium transition-colors duration-300">
+              Features
             </Link>
-          </motion.div>
+            <Link to="/about" className="text-gray-700 hover:text-[#03A6A1] font-medium transition-colors duration-300">
+              About
+            </Link>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <button 
+                onClick={scrollToUpload}
+                className="px-6 py-2.5 bg-[#03A6A1] text-white rounded-full font-semibold hover:bg-[#03A6A1]/90 hover:shadow-lg transition-all duration-300"
+              >
+                Try Now
+              </button>
+            </motion.div>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
-)
+    </nav>
+  )
+}
 
 export default Navbar 
