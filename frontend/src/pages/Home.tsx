@@ -1,9 +1,20 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { Toaster } from 'react-hot-toast'
+import { ResumeUpload } from '../components/ResumeUpload'
+import { AnalysisResults } from '../components/AnalysisResults'
+import { AnalysisResponse } from '../services/api'
 
 const Home = () => {
+  const [analysis, setAnalysis] = useState<AnalysisResponse['data'] | null>(null)
+
+  const handleAnalysisComplete = (response: AnalysisResponse) => {
+    setAnalysis(response.data)
+  }
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -14,6 +25,8 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <Toaster position="top-right" />
+      
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-600 via-primary-500 to-secondary-600 animate-gradient-xy">
         <div className="absolute inset-0 bg-black/20 backdrop-blur-sm"></div>
@@ -42,6 +55,38 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Upload Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-display font-bold text-gray-900 mb-4">
+              Upload Your Resume
+            </h2>
+            <p className="text-lg text-gray-600">
+              Get instant feedback and recommendations to improve your resume
+            </p>
+          </div>
+          <ResumeUpload onAnalysisComplete={handleAnalysisComplete} />
+        </div>
+      </section>
+
+      {/* Analysis Results Section */}
+      {analysis && (
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-display font-bold text-gray-900 mb-4">
+                Your Resume Analysis
+              </h2>
+              <p className="text-lg text-gray-600">
+                Here's what our AI found in your resume
+              </p>
+            </div>
+            <AnalysisResults analysis={analysis.analysis} />
+          </div>
+        </section>
+      )}
 
       {/* Features Section */}
       <section className="py-24 bg-white">
@@ -168,11 +213,11 @@ const Home = () => {
 
             {/* Contact Info */}
             <div data-aos="fade-up" data-aos-delay="200">
-              <h3 className="text-xl font-display font-semibold mb-6">Contact Us</h3>
+              <h3 className="text-xl font-display font-semibold mb-6">Contact Me</h3>
               <ul className="space-y-4">
-                <li className="text-gray-400 text-lg">Email: support@airesumeanalyzer.com</li>
-                <li className="text-gray-400 text-lg">Phone: +1 (555) 123-4567</li>
-                <li className="text-gray-400 text-lg">Address: 123 AI Street, Tech City</li>
+                <li className="text-gray-400 text-lg">Email: mishrashriyansh@outlook.com</li>
+                <li className="text-gray-400 text-lg">Phone: +91 7303655093</li>
+                <li className="text-gray-400 text-lg">Address: Greater Noida, Uttar Pradesh</li>
               </ul>
             </div>
           </div>
