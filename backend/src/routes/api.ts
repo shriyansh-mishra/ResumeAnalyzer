@@ -5,7 +5,6 @@ import multer from 'multer';
 const router = Router();
 const resumeController = new ResumeController();
 
-// Configure multer for memory storage
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: {
