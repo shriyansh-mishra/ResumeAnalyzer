@@ -1,7 +1,11 @@
 import axios from 'axios';
 
-// Make sure this points to the backend server port
-const API_BASE_URL = 'http://localhost:5000/api';
+const LOCAL_API = 'http://localhost:5000/api';
+const REN_API = 'https://analyze-resume-6sl4.onrender.com'
+
+
+const API_BASE_URL =
+  window.location.hostname === 'localhost' ? LOCAL_API : REN_API;
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -12,7 +16,7 @@ const api = axios.create({
   timeout: 30000, // 30 seconds timeout
 });
 
-// Add request interceptor for debugging
+
 api.interceptors.request.use(
   (config) => {
     console.log('Making request to:', config.url);
@@ -24,7 +28,6 @@ api.interceptors.request.use(
   }
 );
 
-// Add response interceptor for debugging
 api.interceptors.response.use(
   (response) => {
     console.log('Response received:', response.status);
@@ -72,7 +75,6 @@ export interface AnalysisResponse {
 }
 
 export const resumeService = {
-  // Upload and analyze resume
   async uploadAndAnalyzeResume(file: File): Promise<AnalysisResponse> {
     const formData = new FormData();
     formData.append('resume', file);
@@ -91,7 +93,6 @@ export const resumeService = {
     }
   },
 
-  // Get analysis results
   async getAnalysis(resumeId: string) {
     try {
       const response = await api.get(`/resume/analysis/${resumeId}`);
