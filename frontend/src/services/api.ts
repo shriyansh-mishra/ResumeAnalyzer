@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const LOCAL_API = 'http://localhost:5000/api';
-const REN_API = 'https://resumeanalyzer-0j6s.onrender.com'
+const REN_API = 'https://resumeanalyzer-0j6s.onrender.com/api'
 
 
 const API_BASE_URL =
