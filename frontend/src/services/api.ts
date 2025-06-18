@@ -40,7 +40,10 @@ api.interceptors.response.use(
 );
 
 export interface ResumeAnalysis {
-  skills: string[];
+  skills: {
+    technical: string[];
+    soft: string[];
+  };
   experience: Array<{
     company: string;
     role: string;

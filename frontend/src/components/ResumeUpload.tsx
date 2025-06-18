@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 import { resumeService, AnalysisResponse } from '../services/api';
 
 interface ResumeUploadProps {
-  onAnalysisComplete: (analysis: AnalysisResponse) => void;
+  onAnalysisComplete: (analysis: AnalysisResponse, file: File) => void;
 }
 
 export const ResumeUpload = ({ onAnalysisComplete }: ResumeUploadProps) => {
@@ -27,7 +27,7 @@ export const ResumeUpload = ({ onAnalysisComplete }: ResumeUploadProps) => {
 
     try {
       const response = await resumeService.uploadAndAnalyzeResume(file);
-      onAnalysisComplete(response);
+      onAnalysisComplete(response, file);
       toast.success('Resume analyzed successfully!');
     } catch (error) {
       console.error('Error analyzing resume:', error);

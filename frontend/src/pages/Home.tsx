@@ -11,9 +11,11 @@ import { AnalysisResponse } from '../services/api'
 
 const Home = () => {
   const [analysis, setAnalysis] = useState<AnalysisResponse['data'] | null>(null)
+  const [uploadedFile, setUploadedFile] = useState<File | null>(null)
 
-  const handleAnalysisComplete = (response: AnalysisResponse) => {
+  const handleAnalysisComplete = (response: AnalysisResponse, file: File) => {
     setAnalysis(response.data)
+    setUploadedFile(file)
   }
 
   useEffect(() => {
@@ -84,7 +86,7 @@ const Home = () => {
                 Here's what our AI found in your resume
               </p>
             </div>
-            <AnalysisResults analysis={analysis.analysis} />
+            <AnalysisResults analysis={analysis.analysis} resumeFile={uploadedFile || undefined} />
           </div>
         </section>
       )}
