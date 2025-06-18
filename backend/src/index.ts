@@ -12,7 +12,7 @@ app.use(cors({
   origin: [
     'http://localhost:5174',
     'http://127.0.0.1:5174',
-    'https://resume-analyzer-omega-six.vercel.app' 
+    'https://analyzeresume.vercel.app' 
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
