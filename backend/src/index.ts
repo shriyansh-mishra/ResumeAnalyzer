@@ -5,11 +5,9 @@ import cors from 'cors';
 
 const app = express();
 
-// Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// CORS middleware with more permissive settings for development
 app.use(cors({
   origin: ['http://localhost:5173', 'http://127.0.0.1:5173'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -18,7 +16,6 @@ app.use(cors({
   maxAge: 86400 // 24 hours
 }));
 
-// Routes
 app.use('/api', apiRoutes);
 
 // Basic health check route
@@ -26,7 +23,6 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
-// Error handling middleware
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
   console.error('Error:', err);
   res.status(500).json({

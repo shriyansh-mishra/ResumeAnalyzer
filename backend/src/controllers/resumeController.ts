@@ -7,7 +7,6 @@ import mammoth from 'mammoth';
 
 const resumeService = new ResumeService();
 
-// Configure multer for memory storage
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: {
@@ -23,17 +22,15 @@ const upload = multer({
   },
 });
 
-// Helper function to clean extracted text
 function cleanText(text: string): string {
   return text
-    .replace(/\r\n/g, '\n') // Normalize line endings
-    .replace(/\n{3,}/g, '\n\n') // Replace multiple newlines with double newline
-    .replace(/[^\S\n]+/g, ' ') // Replace multiple spaces with single space
+    .replace(/\r\n/g, '\n') 
+    .replace(/\n{3,}/g, '\n\n')
+    .replace(/[^\S\n]+/g, ' ') 
     .trim();
 }
 
 export class ResumeController {
-  // Upload and analyze resume
   async uploadAndAnalyze(req: Request, res: Response) {
     try {
       console.log('Received file upload request');
@@ -49,7 +46,6 @@ export class ResumeController {
         size: req.file.size
       });
 
-      // Extract text from file
       let text = '';
       try {
         if (req.file.mimetype === 'application/pdf') {
@@ -82,7 +78,6 @@ export class ResumeController {
         });
       }
 
-      // Clean the extracted text
       text = cleanText(text);
       console.log('Text cleaned, new length:', text.length);
       console.log('First 100 characters after cleaning:', text.substring(0, 100));
@@ -95,17 +90,14 @@ export class ResumeController {
         });
       }
 
-      // Process file
       try {
         const fileName = await resumeService.uploadResume(req.file);
         console.log('File processed:', fileName);
 
-        // Analyze resume
         console.log('Starting resume analysis');
         const analysis = await resumeService.analyzeResume(text);
         console.log('Analysis complete:', JSON.stringify(analysis, null, 2));
 
-        // Save analysis
         const analysisId = await resumeService.saveAnalysis(fileName, analysis);
         console.log('Analysis saved:', analysisId);
 
@@ -125,7 +117,7 @@ export class ResumeController {
             stack: error.stack
           });
         }
-        throw error; // Re-throw to be caught by outer try-catch
+        throw error; 
       }
     } catch (error) {
       console.error('Error processing resume:', error);
