@@ -11,8 +11,8 @@ const Features = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Features</h1>
-          <p className="text-xl text-gray-600">
+          <h1 className="text-4xl font-bold text-[rgb(17,24,39)] mb-4">Features</h1>
+          <p className="text-xl text-[rgb(17,24,39)]">
             Discover how our AI-powered platform can help you advance your career
           </p>
         </motion.div>
@@ -26,13 +26,13 @@ const Features = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white p-6 rounded-lg shadow-lg"
             >
-              <div className="text-primary-600 text-4xl mb-4">{feature.icon}</div>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">{feature.title}</h2>
-              <p className="text-gray-600 mb-4">{feature.description}</p>
+              <div className="text-[rgb(17,24,39)] text-4xl mb-4">{feature.icon}</div>
+              <h2 className="text-2xl font-semibold text-[rgb(17,24,39)] mb-4">{feature.title}</h2>
+              <p className="text-[rgb(17,24,39)] mb-4">{feature.description}</p>
               <ul className="space-y-2">
                 {feature.benefits.map((benefit, idx) => (
-                  <li key={idx} className="flex items-center text-gray-600">
-                    <span className="text-primary-600 mr-2">✓</span>
+                  <li key={idx} className="flex items-center text-[rgb(17,24,39)]">
+                    <span className="text-[rgb(17,24,39)] mr-2">✓</span>
                     {benefit}
                   </li>
                 ))}
