@@ -1,5 +1,7 @@
 # 🚀 AI Resume Analyzer
 
+>get started [🔗Site Link](https://analyzeresume.vercel.app/)
+
 Welcome to **AI Resume Analyzer** — your smart career companion! 🎉
 
 Analyze your resume in seconds and unlock personalized insights, job recommendations, and actionable tips to help you land your dream job. Upload your resume (PDF or DOCX), let our AI do the magic, and get a beautiful, easy-to-understand report. ✨
@@ -27,9 +29,11 @@ Analyze your resume in seconds and unlock personalized insights, job recommendat
 
 ## 📸 Sneak Peek
 
-> _Add a screenshot of the app below!_
+> Go check out yourself !
 
-![Screenshot Placeholder](./screenshot.png)
+![Screenshot Placeholder](readme_assest/readme_ss1.png)
+
+![Screenshot Placeholder](readme_assest/readme_ss2.png)
 
 ---
 
