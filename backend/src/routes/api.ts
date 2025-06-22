@@ -8,7 +8,7 @@ const resumeController = new ResumeController();
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: {
-    fileSize: 10 * 1024 * 1024, // 10MB limit
+    fileSize: 10 * 1024 * 1024,
   },
   fileFilter: (req, file, cb) => {
     if (file.mimetype === 'application/pdf' || 
@@ -20,7 +20,6 @@ const upload = multer({
   },
 });
 
-// Resume routes
 router.post('/resume/analyze', upload.single('resume'), resumeController.uploadAndAnalyze);
 router.get('/resume/analysis/:resumeId', resumeController.getAnalysis);
 

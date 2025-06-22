@@ -23,7 +23,7 @@ app.use(cors({
 
 app.use('/api', apiRoutes);
 
-// Basic health check route
+
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
