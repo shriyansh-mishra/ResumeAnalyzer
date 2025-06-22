@@ -1,6 +1,6 @@
 # 🚀 AI Resume Analyzer
 
->get started [🔗Site Link](https://analyzeresume.vercel.app/)
+>Get started [🔗Site Link](https://analyzeresume.vercel.app/)
 
 Welcome to **AI Resume Analyzer** — your smart career companion! 🎉
 
