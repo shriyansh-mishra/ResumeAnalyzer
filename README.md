@@ -51,7 +51,7 @@ Analyze your resume in seconds and unlock personalized insights, job recommendat
 
 ## 💌 Get in Touch
 
-Have feedback or questions? Reach out at [mishrashriyansh@outlook.com](mailto:mishrashriyansh@outlook.com) or connect on [LinkedIn](https://www.linkedin.com/in/shriyansh-mishra-281919225/).
+Have feedback or questions? Reach out at [mishrashriyansh@outlook.com](mailto:mishrashriyansh@outlook.com) and connect on [LinkedIn](https://www.linkedin.com/in/shriyansh-mishra-281919225/).
 
 ---
 
