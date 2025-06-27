@@ -1,20 +1,27 @@
+// src/config/config.ts
 import dotenv from 'dotenv';
 import { z } from 'zod';
+import fs from 'fs';
 import path from 'path';
 
-// Load environment variables
-const result = dotenv.config({ path: path.resolve(__dirname, '../../.env') });
-
-if (result.error) {
-  console.error('Error loading .env file:', result.error);
-  throw new Error('Failed to load environment variables');
+// Load .env file only if it exists (for local development)
+const envPath = path.resolve(__dirname, '../../.env');
+if (fs.existsSync(envPath)) {
+  const result = dotenv.config({ path: envPath });
+  if (result.error) {
+    console.error('Error loading .env file:', result.error);
+  } else {
+    console.log('Loaded local .env file');
+  }
+} else {
+  console.log('No .env file found — using environment variables from Render');
 }
 
 // Define environment variable schema
 const envSchema = z.object({
   // Google Gemini
   GEMINI_API_KEY: z.string().min(1, 'Gemini API key is required'),
-  
+
   // Server
   PORT: z.string().transform(Number).default('5000'),
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
@@ -47,4 +54,4 @@ try {
   throw new Error('Invalid environment variables');
 }
 
-export { config }; 
+export { config };
