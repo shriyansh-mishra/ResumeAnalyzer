@@ -2,7 +2,6 @@
 
 <p align="center">
   <img alt="Code Style" src="https://img.shields.io/badge/code%20style-prettier-ff69b4?style=flat-square">
-  <img alt="MIT License" src="https://img.shields.io/badge/License-MIT-brightgreen?style=flat-square">
   <img alt="Repo Size" src="https://img.shields.io/github/repo-size/shriyansh-mishra/ResumeAnalyzer?style=flat-square">
 </p>
 
