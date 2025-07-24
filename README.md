@@ -1,6 +1,12 @@
 # 🚀 AI Resume Analyzer
 
->Get started [🔗Site Link](https://analyzeresume.vercel.app/)
+<p align="center">
+  <img alt="Code Style" src="https://img.shields.io/badge/code%20style-prettier-ff69b4?style=flat-square">
+  <img alt="MIT License" src="https://img.shields.io/badge/License-MIT-brightgreen?style=flat-square">
+  <img alt="Repo Size" src="https://img.shields.io/github/repo-size/shriyansh-mishra/ResumeAnalyzer?style=flat-square">
+</p>
+
+Get started 🔗[Site Link](https://analyzeresume.vercel.app/)
 
 Welcome to **AI Resume Analyzer** — your smart career companion! 🎉
 
