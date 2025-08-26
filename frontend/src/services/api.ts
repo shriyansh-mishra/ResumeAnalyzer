@@ -1,7 +1,10 @@
 import axios from 'axios';
+import * as dotenv from 'dotenv';
 
-const LOCAL_API = 'http://localhost:5000/api';
-const REN_API = 'https://resumeanalyzer-0j6s.onrender.com/api'
+dotenv.config();
+
+const LOCAL_API = process.env.LOCAL_API;
+const REN_API = process.env.REN_API;
 
 
 const API_BASE_URL =
