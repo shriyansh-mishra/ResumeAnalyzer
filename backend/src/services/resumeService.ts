@@ -6,7 +6,6 @@
   let model: GenerativeModel;
 
   try {
-    console.log('Initializing Gemini with API key:', config.gemini.apiKey.substring(0, 5) + '...');
     genAI = new GoogleGenerativeAI(config.gemini.apiKey);
     
     model = genAI.getGenerativeModel({
