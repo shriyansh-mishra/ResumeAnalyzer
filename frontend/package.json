@@ -13,6 +13,7 @@
     "@heroicons/react": "^2.2.0",
     "aos": "^2.3.4",
     "axios": "^1.10.0",
+    "dotenv": "^17.2.1",
     "framer-motion": "^10.16.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "@types/aos": "^3.0.7",
+    "@types/node": "^24.3.0",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
