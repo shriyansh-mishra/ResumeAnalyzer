@@ -17,12 +17,9 @@ if (fs.existsSync(envPath)) {
   console.log('No .env file found — using environment variables from Render');
 }
 
-// Define environment variable schema
 const envSchema = z.object({
-  // Google Gemini
   GEMINI_API_KEY: z.string().min(1, 'Gemini API key is required'),
 
-  // Server
   PORT: z.string().transform(Number).default('5000'),
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
 });
@@ -38,7 +35,7 @@ try {
   console.log('Environment variables loaded successfully');
   console.log('Server port:', env.PORT);
   console.log('Environment:', env.NODE_ENV);
-  console.log('Gemini API key:', env.GEMINI_API_KEY ? 'Present' : 'Missing');
+  // console.log('Gemini API key:', env.GEMINI_API_KEY ? 'Present' : 'Missing');
 
   config = {
     gemini: {
