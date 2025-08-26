@@ -35,7 +35,7 @@ try {
   console.log('Environment variables loaded successfully');
   console.log('Server port:', env.PORT);
   console.log('Environment:', env.NODE_ENV);
-  // console.log('Gemini API key:', env.GEMINI_API_KEY ? 'Present' : 'Missing');
+  console.log('Gemini API key:', env.GEMINI_API_KEY ? 'Present' : 'Missing');
 
   config = {
     gemini: {
