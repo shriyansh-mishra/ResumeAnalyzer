@@ -1,10 +1,7 @@
 import axios from 'axios';
-import * as dotenv from 'dotenv';
 
-dotenv.config();
-
-const LOCAL_API = process.env.LOCAL_API;
-const REN_API = process.env.REN_API;
+const LOCAL_API = import.meta.env.VITE_LOCAL_API;
+const REN_API = import.meta.env.VITE_REN_API;
 
 
 const API_BASE_URL =
