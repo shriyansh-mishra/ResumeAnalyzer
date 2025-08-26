@@ -2,7 +2,6 @@
   import { config } from '../config/config';
   import { v4 as uuidv4 } from 'uuid';
 
-  // Initialize Gemini with error handling
   let genAI: GoogleGenerativeAI;
   let model: GenerativeModel;
 
@@ -10,9 +9,8 @@
     console.log('Initializing Gemini with API key:', config.gemini.apiKey.substring(0, 5) + '...');
     genAI = new GoogleGenerativeAI(config.gemini.apiKey);
     
-    // Initialize the model with configuration
     model = genAI.getGenerativeModel({
-      model: "gemini-2.0-flash",
+      model: "gemini-2.5-flash",
       generationConfig: {
         temperature: 0.7,
         topK: 40,
@@ -27,12 +25,9 @@
     throw new Error('Gemini initialization failed');
   }
 
-  // In-memory storage for analysis results
   const analysisStore = new Map<string, any>();
 
-  // resumeService.ts
   export class ResumeService {
-    // Process resume file
     async uploadResume(file: Express.Multer.File): Promise<string> {
       try {
         const fileName = `${uuidv4()}-${file.originalname}`;
